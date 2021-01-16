@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,10 +13,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('site.index');
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Auth::routes();
+
+// Auth
+Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function () {
+    Route::get('login', 'LoginController@showLoginForm')->name('login');
+    Route::post('login', 'LoginController@login')->name('login.submit');
+    Route::get('register', 'RegisterController@showSignupForm')->name('register');
+    Route::post('register', 'RegisterController@create')->name('register.submit');
+    Route::post('verifyUser', 'RegisterController@verifyUser')->name('verifyUser');
+    Route::get('verifyUser', 'RegisterController@showVerificationForm')->name('showVerificationForm');
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Welcomw Page
+Route::get('/', function () {
+    return view('site.index');
+})->name('home');
+
+
+// Authenticated Pages
+Route::group(['middleware' => 'auth'], function () {
+    // Logout
+    Route::namespace('Auth')->group(function () {
+        Route::get('logout', 'LoginController@logout')->name('logout');
+    });
+
+    Route::get('app-process-form', function(){
+        return view('site.pages.app_proccess_wizard');
+    })->name('ApplicationProcessWizard');
+
+});
+
+

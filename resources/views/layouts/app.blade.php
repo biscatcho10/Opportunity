@@ -21,15 +21,16 @@
     </head>
     <body class="bg-white">
 
-
-        <div class="content" style="margin:0px 0px 400px 0px">
+        <div class="content">
             @yield('content')
         </div>
 
 
         <!-- footer -->
         @include('site.includes.footer')
-
+        @jquery
+        @toastr_js
+        @toastr_render
         <script src="{{asset('site/js/jquery-3.4.1.slim.min.js')}}"></script>
         <script src="{{asset('site/js/popper.min.js')}}"></script>
         <script src="{{asset('site/js/bootstrap.min.js')}}"></script>

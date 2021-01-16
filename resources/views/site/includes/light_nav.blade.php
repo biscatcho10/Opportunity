@@ -26,3 +26,5 @@
     </div><!-- container -->
 </nav>
   <div class="line"></div>
+
+  @include('site.includes.errors')

@@ -272,6 +272,18 @@ nav .fa-sign-out-alt {
   padding: 8px;
 }
 
+.pop #popup {
+  background-color: #663399 !important;
+  border-radius: 50px;
+  color: #fff;
+  padding: 8px;
+  display: block;
+  margin: 50px auto;
+  width: 100px;
+  border: none;
+  outline: none;
+}
+
 .login-form .forget {
   border-bottom: 1px solid steelblue;
 }

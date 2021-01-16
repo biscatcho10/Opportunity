@@ -16,9 +16,10 @@
                 <h2 class="font-weight-bold">Login</h2>
                 <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, veritatis sed illo cum quod illum.</p>
                 <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="form-group">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email Address">
-                        @error('email')
+                        <input id="login" type="text" class="form-control @error('login') is-invalid @enderror" name="login" value="{{ old('login') }}" required autocomplete="login" placeholder="Email or phone">
+                        @error('login')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -64,7 +65,7 @@
     </div><!-- container -->
 </section>
 
-<section class="popup">
+{{-- <section class="popup">
     <!--Model Popup starts-->
     <div class="container">
         <div class="row">
@@ -113,5 +114,5 @@
         </div>
     </div>
     <!--Model Popup ends-->
-</section>
+</section> --}}
 @endsection

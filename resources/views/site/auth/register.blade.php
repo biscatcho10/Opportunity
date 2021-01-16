@@ -16,7 +16,8 @@
             <div class="col-sm-12 col-md-5 col-lg-5 pl-5">
                 <h2 class="font-weight-bold rhead">Apply Now</h2>
                 <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, veritatis sed illo cum quod illum.</p>
-                <form action="" class="form-group">
+                <form action="{{route('register.submit')}}" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <input id="first_name" type="text" class="form-control mt-3 @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" placeholder="First Name">
@@ -60,7 +61,7 @@
                             placeholder="Password Confirm">
                         </div>
                     </div>
-                    <input class="form-control mt-3" type="tel" placeholder="Phone">
+                    <input class="form-control mt-3" type="tel" name="phone" placeholder="Phone">
                     <div class="row">
                         <div class="col-6">
                             <input type="radio" class="mt-4"> <label for="">Term & Conditions</label>
@@ -74,7 +75,42 @@
                             <input type="radio" class="mt-4"> <label for="">Newsletter</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn mt-3 form-control login-button text-uppercase" data-toggle="modal" href="#ignismyModal">submit your request</button>
+                    {{-- <button type="submit" class="btn mt-3 form-control login-button text-uppercase" >submit your request</button> --}}
+                    <button type="button" class="btn mt-3 form-control login-button text-uppercase" data-toggle="modal" href="#ignismyModal">submit your request</button>
+
+                    <section class="popup">
+                        <!--Model Popup starts-->
+                        <div class="container">
+                            <div class="row">
+                                <!-- <a class="btn btn-primary" data-toggle="modal" href="#ignismyModal">open Popup</a> -->
+                                <div class="modal fade" id="ignismyModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content" style="border-radius: 30px;">
+                                            <div class="modal-header">
+                                               <img src=" {{asset('site/images/success.png')}} " class="img-fluid">
+                                            </div>
+
+                                            <div class="modal-body text-center">
+                                                <h3>Thank You</h3>
+                                                <p class="p-3">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                    sed do eiusmod tempor incididunt ut labore sit
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                                    sed do eiusmod tempor incididunt ut labore sit Lorem
+                                                    ipsum dolor sit amet, consectetur adipiscing.
+                                                </p>
+                                                {{-- <a href="{{route('home')}}" class="btn goLogin" >Next</a> --}}
+                                                <button type="submit" class="btn goLogin" >Next</button>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Model Popup ends-->
+                    </section>
                 </form>
                 <p class="dont-have-r">Already have an account? <a href="{{route('login')}}" class="apply-link">Log In now</a></p>
             </div><!-- cols -->
@@ -85,36 +121,4 @@
     </div><!-- container -->
 </section>
 
-
-<section class="popup">
-    <!--Model Popup starts-->
-    <div class="container">
-        <div class="row">
-            <!-- <a class="btn btn-primary" data-toggle="modal" href="#ignismyModal">open Popup</a> -->
-            <div class="modal fade" id="ignismyModal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content" style="border-radius: 30px;">
-                        <div class="modal-header">
-                           <img src=" {{asset('site/images/success.png')}} " class="img-fluid">
-                        </div>
-
-                        <div class="modal-body text-center">
-                            <h3>Thank You</h3>
-                            <p class="p-3">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore sit
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore sit Lorem
-                                ipsum dolor sit amet, consectetur adipiscing.
-                            </p>
-                            <a href="login.html" class="btn goLogin" >Next</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Model Popup ends-->
-</section>
 @endsection

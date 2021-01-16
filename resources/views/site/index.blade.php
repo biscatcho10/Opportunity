@@ -22,6 +22,7 @@
                 <a href="html/Applynow.html">
                     <button class="text-capitalize apply">apply now</button>
                 </a>
+
             </div>
             <div class="col-md-6 welcome-img">
             </div>
