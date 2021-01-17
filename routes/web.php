@@ -31,9 +31,7 @@ Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function () {
 
 
 // Welcomw Page
-Route::get('/', function () {
-    return view('site.index');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 
 // Authenticated Pages
@@ -43,10 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('logout', 'LoginController@logout')->name('logout');
     });
 
-    Route::get('app-process-form', function(){
-        return view('site.pages.app_proccess_wizard');
-    })->name('ApplicationProcessWizard');
+    Route::get('app-process-form', 'HomeController@appProcessForm')->name('ApplicationProcessWizard');
 
 });
+
 
 

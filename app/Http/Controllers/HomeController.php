@@ -23,6 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('site.index');
     }
+
+    public function appProcessForm()
+    {
+        return view('site.pages.app_proccess_wizard');
+    }
+
+
 }
