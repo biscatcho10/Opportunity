@@ -20,7 +20,8 @@ class Profile extends Model
         'tax_add',
         'send_mail',
         'image',
-        'user_id'
+        'user_id',
+        'zip'
     ];
 
     public function user()

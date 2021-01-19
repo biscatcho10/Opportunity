@@ -14,19 +14,11 @@
 
 
 @section('content')
-@if (session()->has('success'))
-    <script>
-        window.onload = function() {
-            notif({
-                msg: "{{session()->get('success')}}",
-                type: "success"
-            })
-        }
-    </script>
-@endif
 
-<div class="container mt-5" style="margin: 0px auto; padding: 0px 80px;" id="print">
-    <h5 class="text-center">Confidential</h5>
+@include('site.includes.dark_nav1')
+
+<div class="container mt-5" style="margin: 20px auto; padding: 0px 80px; border: 1px solid rgb(102, 51, 153);" id="print">
+    <h5 class="text-center mt-3">Confidential</h5>
 
    <h4 class="text-center" style="margin: 35px 0px;">MUTUAL NON-DISCLOSURE AGREEMENT</h4>
 
@@ -34,7 +26,7 @@
        This Mutual Non-Disclosure Agreement (the “Agreement”) is made as of <span class="text-danger"><u>DATE</u></span> (the
        “Effective Date”) in connection with a business relationship between X, having a place of, and
        <span class="text-danger"><u>{{$user->first_name . " " . $user->last_name}}</u></span> having         a        place       of       business at
-       _____<span class="text-danger"><u>{{$profile->str_add_one . " ," .$profile->str_add_two . " ," . $profile->city . " ," . $profile->state $profile->zip }}</u></span>. The Party disclosing and
+       _____<span class="text-danger"><u>{{$profile->str_add_one . " ," .$profile->str_add_two . " ," . $profile->city . " " . $profile->zip}}</u></span>. The Party disclosing and
        the Party receiving the Confidential Information (as defined below) are hereinafter referred to as
        the “disclosing party” and “receiving party”, respectively. In consideration of any disclosure,
        any negotiations concerning a proposed business relationship, the Parties agree to the following:
@@ -99,14 +91,21 @@
            Company:
 
            Title:
+
+           <img src="{{ auth()->user()->signature->signature }}" class="img-fluid"  width="150px" style="margin-top: -60px" alt="The Signature">
+
        </pre>
+   </div>
+
+   <div class="row mb-4">
+    <hr class="mg-b-40">
+    <button class="btn btn-danger" id="print_Button"  onclick="printDiv()">Print </button>
+    <a class="btn btn-primary ml-2" href="{{route('get.verify')}} ">Next</a>
    </div>
 
 </div>
 
-    <hr class="mg-b-40">
-    <button class="btn btn-danger  float-left mt-3 mr-2" id="print_Button"  onclick="printDiv()"> <i
-            class="mdi mdi-printer ml-1"></i>طباعة</button>
+
 
 
 @endsection

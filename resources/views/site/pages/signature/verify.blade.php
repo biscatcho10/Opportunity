@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
+@include('site.includes.dark_nav1')
+
 @section('content')
-<div class="container">
+<div class="container" style="min-height: 600px">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-header">Verify Email</div>
 
                 <div class="card-body">
@@ -29,7 +31,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                   Verify 
+                                   Verify
                                 </button>
                             </div>
                         </div>

@@ -1,9 +1,5 @@
 @extends('layouts.app')
 @section('css')
-    <!---Internal Fileupload css-->
-    <link href="{{ URL::asset('assets/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
-    <!---Internal Fancy uploader css-->
-    <link href="{{ URL::asset('assets/plugins/fancyuploder/fancy_fileupload.css') }}" rel="stylesheet" />
 <style>
     #canvasDiv{
     position: relative;
@@ -11,6 +7,7 @@
     height:300px;
     }
 </style>
+
 	<!--Internal   Notify -->
 <!-- Signer CSS -->
 <link href="{{ URL::asset('signature/css/style.css') }}" rel="stylesheet">
@@ -22,7 +19,7 @@
 
 @section('content')
 
-{{-- @include('site.includes.dark_nav2') --}}
+ @include('site.includes.dark_nav2')
 
 @if (session()->has('success'))
     <script>
@@ -34,52 +31,40 @@
         }
     </script>
 @endif
-
-<div class="container">
-    <div class="card">
+<div class="container" style="min-height: 700px">
+    <div class="row">
+    <div class="card w-50 mx-auto d-block " style="width: 300px">
         <div class="card-body">
-            <div class="tabs-menu ">
+            <div class="tabs-menu w-100 mx-auto d-block">
                 <!-- Tabs -->
-                <ul class="nav nav-tabs profile navtab-custom panel-tabs">
+                <ul class="nav nav-tabs ">
                     <li class="active">
-                        <a href="#home" data-toggle="tab" aria-expanded="true"> <span class="visible-xs"><i class="las la-user-circle tx-16 mr-1"></i></span> <span class="hidden-xs">ABOUT ME</span> </a>
+                        <a class="btn btn-sm tabutton" href="#profile" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Signature Pad</span> </a>
                     </li>
                     <li class="">
-                        <a href="#profile" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Signature Pad</span> </a>
+                        <a  class="btn btn-sm tabutton mx-2" href="#textSign"  data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Signature Text</span> </a>
                     </li>
                     <li class="">
-                        <a href="#textSign"  data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Signature Text</span> </a>
-                    </li>
-                    <li class="">
-                        <a href="#uploadSign"  data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Upload Signature</span> </a>
+                        <a class="btn btn-sm tabutton" href="#uploadSign"  data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Upload Signature</span> </a>
                     </li>
                 </ul>
             </div>
             <div class="tab-content border-left border-bottom border-right border-top-0 p-4">
-                <div class="tab-pane active" id="home">
-                    <h4 class=" text-left ">Please Complete Register</h4>
-                   <p class="text-left"> Give Me Signature You can write it using one of three options </p>
-                   <p class="text-left"> - Signature Pad</p>
-                    <p class="text-left">- Signature Text</p>
-                    <p class="text-left">- Upload Signature</p>
 
-
-
-                </div>
 
                 <div class="tab-pane " id="uploadSign">
                     <h4 class=" text-center ">Upload Signature</h4>
                    <form action="{{route('upload.save')}}" method="POST" enctype="multipart/form-data">
                        @csrf
                        <div class="col-sm-12 col-md-12">
-                           <input type="file" name="signature" class="dropify" accept=",.jpg, .png, image/jpeg, image/png"
+                           <input type="file" name="signature" class=" form-control my-3" accept=",.jpg, .png, image/jpeg, image/png"
                                   data-height="70" />
-
+                                  <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
                        </div><br>
 
-                       <div class="d-flex justify-content-center">
-                           <button type="submit" class="btn btn-primary">حفظ البيانات</button>
-                       </div>
+
 
                    </form>
 
@@ -88,14 +73,14 @@
                 </div>
                 <div class="tab-pane" id="profile">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-12">
                                 <h4 class="text-center ">Add Signture</h4>
                                 <br>
                                 <div id="canvasDiv"></div>
                                 <br>
                                 <img id="download" src=""  download="image.png">
                                 <button type="button" class="btn btn-danger" id="reset-btn">Clear</button>
-                                <button type="button" class="btn btn-success" onClick="download()" id="btn-save">Save</button>
+                                <button type="button" class="btn btn-primary" onClick="download()" id="btn-save">Save</button>
                             <form id="signatureform" action="{{route('saveSign.add') }}" style="display:none" method="post">
                                 @csrf
                                 <input type="hidden" id="signature" name="signature">
@@ -434,3 +419,4 @@ $(document).on('click','.btnsave',function (e){
 </script>
 
 @endsection
+

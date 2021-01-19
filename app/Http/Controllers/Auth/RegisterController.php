@@ -126,6 +126,7 @@ class RegisterController extends Controller
         $user->verification_code = rand(1000, 9999);
         $user->pin_code = rand(1010, 9999);
         $user->save();
+
         //send verification code
         if (env('APP_ENV') !== 'local') {
             Sms::sms($user->verification_code, $user->phone);

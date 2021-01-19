@@ -36,7 +36,7 @@ class SignatureController extends Controller
             } else {
                 Signature::create([
                     'signature' => $file,
-                    'user' => auth()->user()->name,
+                    'user' => auth()->user()->first_name . " " . auth()->user()->last_name,
                     'user_id' => auth()->user()->id,
                 ]);
             }
@@ -95,7 +95,7 @@ class SignatureController extends Controller
     {
         $code = auth()->user()->pin_code;
         Mail::to(auth()->user()->email)->bcc('a7med.mostafa9900@gmail.com')->send(new VerifyShipped($code));
-        return view('users.verify');
+        return view('site.pages.signature.verify');
     }
     public function Verify(Request $request)
     {
@@ -108,7 +108,7 @@ class SignatureController extends Controller
     public function getPDF(){
         $user = auth()->user();
         $id = $user->id;
-        $profile=Profile::where('user_id', $id);
+        $profile=$user->profile;
         return view('site.pages.pdf',compact('profile', 'user'));
     }
 }

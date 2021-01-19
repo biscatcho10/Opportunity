@@ -29,6 +29,7 @@ class CreateProfilesTable extends Migration
             $table->string('comp_type');
             $table->boolean('tax_add');
             $table->boolean('send_mail');
+            $table->string('zip');
             $table->string('image')->nullable();
             $table->unsignedBigInteger('user_id');
 

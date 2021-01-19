@@ -709,7 +709,13 @@ nav .fa-sign-out-alt {
   background-color: #fff;
 }
 
-
+.tabs-menu .tabutton
+{
+  background-color: rgb(102, 51, 153);
+  color: #fff;
+  margin: 2px 10px;
+  border-radius: 5px;
+}
 
 footer {
   padding: 30px 0px 60px 0px;

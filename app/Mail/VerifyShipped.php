@@ -29,6 +29,6 @@ class VerifyShipped extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.verify.shipped',['code'=>$this->code]);
+        return $this->markdown('emails.shipped',['code'=>$this->code]);
     }
 }
