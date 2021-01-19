@@ -18,7 +18,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'phone', 'isVerified'
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'phone',
+        'verification_code',
+        'verified',
+        'verified_at',
+        'pin_code',
+        'status'
     ];
 
     /**
@@ -36,6 +45,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'isVerified' => 'datetime',
+        'verified_at' => 'datetime',
     ];
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    public function signature()
+    {
+        return $this->hasOne(Signature::class);
+    }
 }

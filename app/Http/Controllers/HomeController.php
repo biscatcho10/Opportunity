@@ -31,5 +31,10 @@ class HomeController extends Controller
         return view('site.pages.app_proccess_wizard');
     }
 
+    public function PHomePending()
+    {
+        return view('site.pages.portal_home_pending');
+    }
+
 
 }

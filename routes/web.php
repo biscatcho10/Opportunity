@@ -30,7 +30,7 @@ Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function () {
 });
 
 
-// Welcomw Page
+// Landing Page
 Route::get('/', 'HomeController@index')->name('home');
 
 
@@ -41,7 +41,26 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('logout', 'LoginController@logout')->name('logout');
     });
 
+    // Application Wizard Form
     Route::get('app-process-form', 'HomeController@appProcessForm')->name('ApplicationProcessWizard');
+
+    // Profile Form
+    Route::get('profile/show' , 'ProfileController@showProfile' )->name('profile.show');
+    Route::post('profile/update' , 'ProfileController@updateProfile' )->name('profile.update');
+
+    // Protal Home Pending
+    Route::get('portal-home-pending', 'HomeController@PHomePending')->name('portal.pending.home')->middleware('verified');
+
+
+    // Signature Routes
+    Route::get('signaturePage','SignatureController@getSignaturePage')->name('signature.index')->middleware('verified','check');
+    Route::post('addSign','SignatureController@AddSign')->name('saveSign.add');
+    Route::post('SignSave',"SignatureController@saveSignText")->name('signText.save');
+    Route::post('upload',"SignatureController@SaveUpload")->name('upload.save');
+    Route::get('verifyAgain','SignatureController@getVerify')->name('get.verify');
+    Route::post('verify','SignatureController@Verify')->name('verify.code');
+    Route::get('getPDF','SignatureController@getPDF')->name('get.pdf');
+
 
 });
 

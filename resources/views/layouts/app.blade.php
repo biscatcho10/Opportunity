@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="{{asset('site/wizard/vendor/bootrap/css/bootstrap.min.css')}}">
         <!-- Main Style Css -->
         @yield('style-num')
+        @yield('css')
 
         <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
     </head>
@@ -38,6 +39,7 @@
         <script src="{{asset('site/wizard/js/jquery.steps.js')}}"></script>
         <script src="{{asset('site/wizard/js/jquery-ui.min.js')}}"></script>
         @yield('script-num')
+        @yield('js')
         <script src="{{asset('site/wizard/js/main-three.js')}}"></script>
     </body>
 </html>

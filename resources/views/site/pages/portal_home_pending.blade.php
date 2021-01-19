@@ -22,7 +22,7 @@
 
 
     <!-- content -->
-    <div class="content">
+    <div class="content" style="min-height: 700px">
         <div class="container">
             <div class="row" style="margin-top: 65px">
                 <div class="col-sm-12 col-md-12 col-lg-8">

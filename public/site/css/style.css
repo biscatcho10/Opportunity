@@ -684,6 +684,33 @@ nav .fa-sign-out-alt {
   font-size: 14px;
 }
 
+
+
+.form
+{
+  border: 2px solid rgb(102, 51, 153);
+  border-radius: 25px;
+  min-height: 500px;
+}
+.form h3, .form h5
+{
+  color: rgb(102, 51, 153);
+}
+
+.form button
+{
+  background-color: rgb(102, 51, 153);
+  color: #fff;
+}
+.form button:hover
+{
+  color: rgb(102, 51, 153);
+  border:1px solid rgb(102, 51, 153);
+  background-color: #fff;
+}
+
+
+
 footer {
   padding: 30px 0px 60px 0px;
   background-color: rgb(102, 51, 153);

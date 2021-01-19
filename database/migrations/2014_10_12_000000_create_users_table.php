@@ -22,7 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone')->unique();
             $table->string('verification_code');
+            $table->string('pin_code')->nullable();
             $table->boolean('verified')->default(false);
+            $table->date('verified_at')->nullable();
+            $table->boolean('status')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
