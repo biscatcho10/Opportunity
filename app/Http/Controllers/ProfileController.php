@@ -18,7 +18,6 @@ class ProfileController extends Controller
 
     public function updateProfile(ProfileRequest $request)
     {
-
         $id = auth()->user()->id;
         User::find($id)->update([
             'first_name' => $request->first_name,
