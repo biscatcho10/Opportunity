@@ -6,6 +6,7 @@ use App\Mail\VerifyShipped;
 use App\Models\Profile;
 use App\Models\Signature;
 use App\Traits\General;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -106,9 +107,11 @@ class SignatureController extends Controller
 
 
     public function getPDF(){
+        $date = Carbon::now();
+        $date = $date->toRfc850String();
         $user = auth()->user();
         $id = $user->id;
         $profile=$user->profile;
-        return view('site.pages.pdf',compact('profile', 'user'));
+        return view('site.pages.pdf',compact('profile', 'user', 'date'));
     }
 }

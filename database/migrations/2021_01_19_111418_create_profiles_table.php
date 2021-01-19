@@ -17,6 +17,7 @@ class CreateProfilesTable extends Migration
             $table->id();
             // $table->string('first_name');
             // $table->string('last_name');
+            $table->string('prefix');
             $table->string('suffix');
             $table->string('asociation');
             $table->string('title');

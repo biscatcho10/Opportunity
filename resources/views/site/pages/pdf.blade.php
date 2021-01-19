@@ -23,10 +23,10 @@
    <h4 class="text-center" style="margin: 35px 0px;">MUTUAL NON-DISCLOSURE AGREEMENT</h4>
 
    <pre>
-       This Mutual Non-Disclosure Agreement (the “Agreement”) is made as of <span class="text-danger"><u>DATE</u></span> (the
+       This Mutual Non-Disclosure Agreement (the “Agreement”) is made as of <span class="text-danger"><u>{{$date}}</u></span> (the
        “Effective Date”) in connection with a business relationship between X, having a place of, and
-       <span class="text-danger"><u>{{$user->first_name . " " . $user->last_name}}</u></span> having         a        place       of       business at
-       _____<span class="text-danger"><u>{{$profile->str_add_one . " ," .$profile->str_add_two . " ," . $profile->city . " " . $profile->zip}}</u></span>. The Party disclosing and
+       <span class="text-danger"><u>{{$profile->prefix . " " .$user->first_name . " " . $user->last_name}}</u></span> having         a        place       of       business at
+       _____<span class="text-danger"><u>{{$profile->str_add_one . " ," .$profile->str_add_two . " ," . $profile->city . " " . $profile->zip . " ," .$profile->country }}</u></span>. The Party disclosing and
        the Party receiving the Confidential Information (as defined below) are hereinafter referred to as
        the “disclosing party” and “receiving party”, respectively. In consideration of any disclosure,
        any negotiations concerning a proposed business relationship, the Parties agree to the following:

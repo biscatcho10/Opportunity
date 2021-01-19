@@ -22,13 +22,13 @@
                     <div class="col-6">
                         <div class="form-group">
                           <label for="first_name">First Name</label>
-                          <input type="text" name="first_name" id="first_name" class="form-control" value="{{old('first_name')}}">
+                          <input type="text" name="first_name" id="first_name" class="form-control" value="{{old('first_name', $user->first_name)}}">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                           <label for="last_name">Last Name</label>
-                          <input type="text" name="last_name" id="last_name" class="form-control" value="{{old('last_name')}}">
+                          <input type="text" name="last_name" id="last_name" class="form-control" value="{{old('last_name', $user->last_name)}}">
                         </div>
                     </div>
                 </div>
@@ -38,15 +38,32 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                          <label for="suffix">Suffix</label>
-                          <input type="text" name="suffix" id="suffix" class="form-control" placeholder="Suffix" value="{{old('suffix')}}">
+                          <label for="prefix">Prefix</label>
+                          <select class="form-control" name="prefix" id="prefix">
+                            <optgroup label="Select The Prefix">
+                              <option selected>select prefex </option>
+                              <option value="Mr." >Mr.</option>
+                              <option value="Mrs." >Mrs.</option>
+                              <option value="Ms." >Ms.</option>
+                              <option value="Dr." >Dr.</option>
+                              <option value="Capt." >Capt.</option>
+                              <option value="Dr.Capt" >Dr.Capt</option>
+                              <option value="Dr.Capt" >Dr.Capt</option>
+                            </optgroup>
+                          </select>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                          <label for="image">Your Image</label>
-                          <input type="file" name="image" id="image" class="form-control">
+                          <label for="suffix">Suffix</label>
+                          <input type="text" name="suffix" id="suffix" class="form-control" placeholder="Suffix" value="{{old('suffix')}}">
                         </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                      <label for="image">Your Image</label>
+                      <input type="file" name="image" id="image" class="form-control">
                     </div>
                 </div>
             </div>
