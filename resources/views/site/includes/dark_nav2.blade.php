@@ -18,7 +18,9 @@
         <div class="user-icon ml-auto">
             <div class="row ml-2">
                 @auth
-                <img src="{{auth()->user()->profile->image}}" width="40px" height="40px" class="mt-1" >
+                @isset(auth()->user()->profile->image)
+                    <img src="{{auth()->user()->profile->image}}" width="40px" height="40px" class="mt-1" >
+                @endisset
                 @endauth
                 <!-- <i class="fa fa-sign-out-alt"></i> -->
                 {{-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
