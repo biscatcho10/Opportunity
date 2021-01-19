@@ -727,6 +727,11 @@ footer {
   margin: 60px 0px 40px 0px;
 }
 
+.dropdown-toggle::after
+{
+    display: none;
+}
+
 @media (max-width: 767px) {
   nav .first-child {
     width: 100%;

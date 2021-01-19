@@ -81,7 +81,7 @@ class LoginController extends Controller
                 $encrypted = Crypt::encrypt('userId_' . $user->id);
                 return redirect()->route('verifyUser', ['token' => $encrypted])->with('success', __("Verification code has been sent to your phone number"));
             } else{
-                return redirect()->to(route('home'));
+                return redirect()->to(route('portal.pending.home'));
             }
 
         }

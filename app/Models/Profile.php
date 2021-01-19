@@ -24,6 +24,11 @@ class Profile extends Model
         'zip'
     ];
 
+
+    public function getImageAttribute($val){
+        return ($val != null) ? asset('assets/images/users/'.$val) : "" ;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

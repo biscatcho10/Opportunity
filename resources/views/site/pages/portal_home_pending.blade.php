@@ -8,11 +8,15 @@
 
      <!-- Welcome Div -->
      <div class="welcome">
-        <div class="container-fluid">
+        <div class="container-fluid" >
           <div class="row">
             <div class="col-md-6 welcome-text">
-              <h2>Welcome Visit</h2>
-              <p class="lead lead2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex dolorum rerum in error nam perferendis voluptate iure enim, sunt eveniet amet consectetur!</p>
+              <h2>Your Application is Pending.</h2>
+              <p class="lead lead2">
+                After acceptance, you will gain access to
+                VBAN Opportunities and related
+                Features. Should we need anything more
+                From you, we will contact you.</p>
             </div>
             <div class="col-md-6 welcome-img">
             </div>
@@ -20,9 +24,12 @@
         </div>
       </div>
 
+      <div class="content" style="min-height: 500px">
+
+      </div>
 
     <!-- content -->
-    <div class="content" style="min-height: 700px">
+    {{-- <div class="content" style="min-height: 700px">
         <div class="container">
             <div class="row" style="margin-top: 65px">
                 <div class="col-sm-12 col-md-12 col-lg-8">
@@ -97,5 +104,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
