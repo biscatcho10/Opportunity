@@ -107,8 +107,8 @@ class SignatureController extends Controller
 
     public function getPDF(){
         $user = auth()->user();
-        $id = auth()->user()->id;
-        $profile=Profile::find($id);
+        $id = $user->id;
+        $profile=Profile::where('user_id', $id);
         return view('site.pages.pdf',compact('profile', 'user'));
     }
 }
