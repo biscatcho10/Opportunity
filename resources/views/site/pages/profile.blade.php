@@ -39,7 +39,7 @@
                     <div class="col-6">
                         <div class="form-group">
                           <label for="suffix">Suffix</label>
-                          <input type="text" name="suffix" id="suffix" class="form-control" placeholder="Suffix" value="{{old('suffix')}}">
+                          <input type="text" name="suffix" id="suffix" class="form-control" placeholder="Suffix" value="{{old('suffix', $profile->suffix)}}">
                         </div>
                     </div>
                     <div class="col-6">
@@ -69,11 +69,11 @@
                             <select class="form-control" name="asociation" id="asociation">
                               <optgroup label="Select The Association">
                                 <option selected>select asociation </option>
-                                <option value="owner">Owner</option>
-                                <option value="investor">Investor</option>
-                                <option value="advisor">Advisor / Board Member</option>
-                                <option value="executive">Executive</option>
-                                <option value="employee">Employee</option>
+                                <option value="owner" {{$profile->asociation == "owner" ? "selected" : ""}} >Owner</option>
+                                <option value="investor" {{$profile->asociation == "investor" ? "selected" : ""}}>Investor</option>
+                                <option value="advisor" {{$profile->asociation == "advisor" ? "selected" : ""}}>Advisor / Board Member</option>
+                                <option value="executive" {{$profile->asociation == "executive" ? "selected" : ""}}>Executive</option>
+                                <option value="employee" {{$profile->asociation == "employee" ? "selected" : ""}}>Employee</option>
                               </optgroup>
                             </select>
                         </div>
@@ -84,13 +84,13 @@
                     <div class="col-6">
                         <div class="form-group">
                           <label for="title">Your Title</label>
-                          <input type="text" name="title" id="title" class="form-control" placeholder="Your Title" value="{{old('title')}}">
+                          <input type="text" name="title" id="title" class="form-control" placeholder="Your Title" value="{{old('title', $profile->title)}}">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                           <label for="comp_website">Company Website</label>
-                          <input type="text" name="comp_website" id="comp_website" class="form-control" placeholder="comp_website" value="{{old('comp_website')}}">
+                          <input type="text" name="comp_website" id="comp_website" class="form-control" placeholder="comp_website" value="{{old('comp_website', $profile->comp_website)}}">
                         </div>
                     </div>
                 </div>
@@ -103,13 +103,13 @@
                     <div class="col-6">
                         <div class="form-group">
                           <label for="str_add_one">Street Address One</label>
-                          <input type="text" name="str_add_one" id="str_add_one" class="form-control" placeholder="Street Address One" value="{{old('str_add_one')}}">
+                          <input type="text" name="str_add_one" id="str_add_one" class="form-control" placeholder="Street Address One" value="{{old('str_add_one', $profile->str_add_one)}}">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
                             <label for="str_add_two">Street Address Two</label>
-                            <input type="text" name="str_add_two" id="str_add_two" class="form-control" placeholder="Street Address Two" value="{{old('str_add_two')}}">
+                            <input type="text" name="str_add_two" id="str_add_two" class="form-control" placeholder="Street Address Two" value="{{old('str_add_two', $profile->str_add_two)}}">
                         </div>
                     </div>
                 </div>
@@ -118,19 +118,19 @@
                     <div class="col-4">
                         <div class="form-group">
                           <label for="city">City</label>
-                          <input type="text" name="city" id="city" class="form-control" placeholder="City" value="{{old('city')}}">
+                          <input type="text" name="city" id="city" class="form-control" placeholder="City" value="{{old('city', $profile->city)}}">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-group">
                           <label for="state">State</label>
-                          <input type="text" name="state" id="state" class="form-control" placeholder="State" value="{{old('state')}}">
+                          <input type="text" name="state" id="state" class="form-control" placeholder="State" value="{{old('state', $profile->state)}}">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-group">
                           <label for="country">Country</label>
-                          <input type="text" name="country" id="country" class="form-control" placeholder="Country" value="{{old('country')}}">
+                          <input type="text" name="country" id="country" class="form-control" placeholder="Country" value="{{old('country', $profile->country)}}">
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                     <div class="col-6">
                         <div class="form-group">
                           <label for="zip">ZIP</label>
-                          <input type="text" name="zip" id="zip" class="form-control" placeholder="ZIP" value="{{old('zip')}}">
+                          <input type="text" name="zip" id="zip" class="form-control" placeholder="ZIP" value="{{old('zip', $profile->zip)}}">
                         </div>
                     </div>
                     <div class="col-6">
@@ -147,9 +147,9 @@
                             <label for="comp_type">Type</label>
                             <select class="form-control" name="comp_type" id="comp_type">
                               <optgroup label="Select The Type">
-                                <option selected>select company type </option>
-                                <option value="office">Office</option>
-                                <option value="headquartered">Headquartered</option>
+                                <option value="" selected>select company type </option>
+                                <option value="office" {{$profile->comp_type == "office" ? "selected" : ""}}>Office</option>
+                                <option value="headquartered" {{$profile->comp_type == "headquartered" ? "selected" : ""}}>Headquartered</option>
                             </select>
                         </div>
                     </div>
@@ -158,13 +158,13 @@
                 <div class="row my-2">
                     <div class="col-6">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" name="tax_add" id="tax_add">
+                            <input type="checkbox" class="form-check-input" name="tax_add" id="tax_add" {{ $profile->tax_add == 1 ? "checked" : "" }} >
                             <label class="form-check-label" for="tax_add">Tax Address ?</label>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" name="send_mail" id="send_mail">
+                            <input type="checkbox" class="form-check-input" name="send_mail" id="send_mail" {{ $profile->send_mail == 1 ? "checked" : "" }}>
                             <label class="form-check-label" for="send_mail">Send Relevant Mail Here?</label>
                         </div>
                     </div>
