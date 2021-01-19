@@ -17,7 +17,9 @@
 
         <div class="user-icon ml-auto">
             <div class="row ml-2">
+                @auth
                 <img src="{{auth()->user()->profile->image}}" width="40px" height="40px" class="mt-1" >
+                @endauth
                 <!-- <i class="fa fa-sign-out-alt"></i> -->
                 {{-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="white" fill-opacity="0.01"/>
