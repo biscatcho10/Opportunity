@@ -31,7 +31,7 @@
                         </svg>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">My Profile</a>
+                        <a class="dropdown-item" href=" {{route('profile.show')}} ">My Profile</a>
                         <a class="dropdown-item" href=" {{route('logout')}} ">Logout</a>
                     </div>
                 </div>
