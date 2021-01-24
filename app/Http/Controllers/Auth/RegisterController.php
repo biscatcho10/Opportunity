@@ -103,7 +103,7 @@ class RegisterController extends Controller
             'last_name' => 'required',
             'first_name' => 'required',
             'email' => 'required|unique:users,email',
-            'password' => 'required',
+            'password' => 'required|string|min:8|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
             'password_confirmation' => 'required|same:password',
             'phone' => 'required|unique:users,phone|regex:/^([0-9\s\-\+\(\)]*)$/|numeric',
         ]);
@@ -123,9 +123,13 @@ class RegisterController extends Controller
             'password' => Hash::make($request->get('password')),
         ]);
 
-        $user->verification_code = rand(1000, 9999);
+        // $user->verification_code = rand(1000, 9999);
+        $user->verification_code = 9804;
         $user->pin_code = rand(1010, 9999);
         $user->save();
+
+        // create Profile
+        $user->profile()->create();
 
         //send verification code
         if (env('APP_ENV') !== 'local') {
@@ -136,7 +140,7 @@ class RegisterController extends Controller
         // $encrypted = Crypt::encrypt('userId_' . $user->id);
         // return redirect()->route('verifyUser', ['token' => $encrypted])->with('success', __("Verification code has been sent to your phone number"));
 
-        return redirect()->route('login');
+        return redirect()->route('register.next');
 
     }
 
@@ -180,4 +184,12 @@ class RegisterController extends Controller
         $id = $decrypted[1];
         return view('site.auth.verify', ['user_id' => $id]);
     }
+
+
+
+    public function next()
+    {
+        return view('site.auth.next');
+    }
+
 }

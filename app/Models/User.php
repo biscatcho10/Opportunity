@@ -27,7 +27,8 @@ class User extends Authenticatable
         'verified',
         'verified_at',
         'pin_code',
-        'status'
+        'status',
+        'registered'
     ];
 
     /**

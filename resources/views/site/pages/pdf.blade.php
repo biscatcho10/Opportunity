@@ -79,16 +79,16 @@
 
        <pre class="mt-3">X, LLC</pre>
        <pre class="mt-5 " style="margin-left: -120px;">
-           By:____________________
+           By:{{$user->first_name . " " . $user->last_name}}
            Name: X G.
 
            Title: Principal
 
 
-           By:_____________________
+           By:{{$user->first_name . " " . $user->last_name}}
            Name:
 
-           Company:
+           Company:{{$profile->title}}
 
            Title:
 
@@ -99,8 +99,8 @@
 
    <div class="row mb-4">
     <hr class="mg-b-40">
-    <button class="btn btn-danger" id="print_Button"  onclick="printDiv()">Print </button>
-    <a class="btn btn-primary ml-2" href="{{route('get.verify')}} ">Next</a>
+    <button class="btn btn-outline-dark" id="print_Button"  onclick="printDiv()">Print </button>
+    <a class="btn btn-move ml-2" href="{{route('get.verify')}} ">Next</a>
    </div>
 
 </div>

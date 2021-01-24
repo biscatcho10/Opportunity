@@ -7,6 +7,30 @@
     @include('site.includes.dark_nav1')
 
 
+    {{-- <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border-radius: 30px;">
+                <div class="modal-header">
+                   <img src=" {{asset('site/images/success.png')}} " class="img-fluid">
+                </div>
+
+                <div class="modal-body text-center">
+                    <h3>Thank You</h3>
+                    <p class="p-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore sit
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore sit Lorem
+                        ipsum dolor sit amet, consectetur adipiscing.
+                    </p>
+                    <button type="button" class="sub form-control" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+
+
     <!-- Welcome Div -->
     <div class="welcome">
         <div class="container-fluid">
@@ -145,4 +169,5 @@
         </div>
     </section>
     <div class="white-line"></div>
+
 @endsection

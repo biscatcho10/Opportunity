@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
+@extends('site.includes.dark_nav1')
+
 @section('content')
-<div class="container">
+<div class="container" style="min-height: 600px">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

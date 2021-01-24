@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset('site/wizard/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css')}}">
         <!-- datepicker -->
         <link rel="stylesheet" type="text/css" href="{{asset('site/wizard/css/jquery-ui.min.css')}}">
-        <link rel="stylesheet" href="{{asset('site/wizard/vendor/bootrap/css/bootstrap.min.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('site/wizard/vendor/bootrap/css/bootstrap.min.css')}}"> --}}
         <!-- Main Style Css -->
         @yield('style-num')
         @yield('css')
@@ -21,7 +21,11 @@
         <link rel="stylesheet" href="{{asset('site/css/style.css')}}">
     </head>
     <body class="bg-white">
+        <div id="overlay">
+            <div class="loader">
 
+            </div>
+          </div>
         <div class="content">
             @yield('content')
         </div>
@@ -32,14 +36,18 @@
         @jquery
         @toastr_js
         @toastr_render
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="{{asset('site/js/jquery-3.4.1.slim.min.js')}}"></script>
         <script src="{{asset('site/js/popper.min.js')}}"></script>
         <script src="{{asset('site/js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('site/wizard/js/jquery-3.3.1.min.js')}}"></script>
+        {{-- <script src="{{asset('site/wizard/js/jquery-3.3.1.min.js')}}"></script> --}}
         <script src="{{asset('site/wizard/js/jquery.steps.js')}}"></script>
         <script src="{{asset('site/wizard/js/jquery-ui.min.js')}}"></script>
         @yield('script-num')
         @yield('js')
         <script src="{{asset('site/wizard/js/main-three.js')}}"></script>
+        <script src="{{asset('site/js/preloader.js')}}"></script>
+        <script src="{{asset('site/js/main.js')}}"></script>
+
     </body>
 </html>

@@ -6,559 +6,552 @@
   } */
 
 /* landing Page */
-  /* main nav */
-  .main-nav nav {
+/* main nav */
+.main-nav nav {
     background-color: #663399;
-    border-bottom: 1px solid #FFF;
-  }
+    border-bottom: 1px solid #fff;
+}
 
-  .main-nav nav ul li {
-    background-color: #FFF;
+.main-nav nav ul li {
+    background-color: #fff;
     margin-left: 20px;
     border-radius: 50px;
     padding: 0px 20px;
-  }
+}
 
-  .main-nav nav ul li a {
+.main-nav nav ul li a {
     color: #663399 !important;
-  }
+}
 
-  .main-nav nav ul form input {
+.main-nav nav ul form input {
     background-color: #663399 !important;
-    color: #FFF !important;
-    border: 1px solid #FFF !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
     border-radius: 50px !important;
     outline: none !important;
-  }
+}
 
-  .main-nav nav ul form .search {
+.main-nav nav ul form .search {
     position: relative;
     left: 30px;
-  }
+}
 
-  .main-nav nav ul form a i {
-    color: #FFF;
-  }
+.main-nav nav ul form a i {
+    color: #fff;
+}
 
-  .main-nav nav ul form a i:hover, .main-nav nav ul form a i:active {
+.main-nav nav ul form a i:hover,
+.main-nav nav ul form a i:active {
     text-decoration: none;
-  }
-
-
+}
 
 /* Navbar */
 .navbar {
-  padding-bottom: 0;
-  padding-top: 0;
-  /* border-bottom: 2px solid rgb(102, 51, 153); */
+    padding-bottom: 0;
+    padding-top: 0;
+    /* border-bottom: 2px solid rgb(102, 51, 153); */
 }
 
 .line {
-  width: 94%;
-  height: 2px;
-  background-color: rgb(102, 51, 153);
-  display: block;
+    width: 94%;
+    height: 2px;
+    background-color: rgb(102, 51, 153);
+    display: block;
 }
 
 .scond-nav {
-  width: 100%;
-  background-color: rgb(102, 51, 153);
-  color: #fff;
-  padding: 13px;
+    width: 100%;
+    background-color: rgb(102, 51, 153);
+    color: #fff;
+    padding: 13px;
 }
 
 .scond-nav a {
-  text-decoration-color: #fff;
-  color: #fff;
-  text-decoration: underline;
+    text-decoration-color: #fff;
+    color: #fff;
+    text-decoration: underline;
 }
 
 nav li {
-  padding: 8px 16px;
-  border: 2px solid rgb(102, 51, 153);
-  margin-top: 0px;
+    padding: 8px 16px;
+    border: 2px solid rgb(102, 51, 153);
+    margin-top: 0px;
 }
 nav .first-child {
-  margin-left: 100px;
+    margin-left: 100px;
 }
 nav li a:link,
 nav li a:visited {
-  color: rgb(102, 51, 153) !important;
+    color: rgb(102, 51, 153) !important;
 }
 nav li:hover,
 nav li:active {
-  background-color: rgb(102, 51, 153);
-  color: #fff !important;
+    background-color: rgb(102, 51, 153);
+    color: #fff !important;
 }
 nav li a:hover,
 nav li a:active {
-  color: #fff !important;
+    color: #fff !important;
 }
 
 nav .dropdown-item:hover,
 nav .dropdown-item:active {
-  background-color: rgb(102, 51, 153);
+    background-color: rgb(102, 51, 153);
 }
 
 .user-icon {
-  margin-right: 0px;
+    margin-right: 0px;
 }
 
 nav .user-icon .fa-user {
-  background-color: rgb(102, 51, 153);
-  padding: 10px 12px;
-  font-size: 24px;
-  margin-right: 20px;
-  border-radius: 50%;
-  color: #fff;
+    background-color: rgb(102, 51, 153);
+    padding: 10px 12px;
+    font-size: 24px;
+    margin-right: 20px;
+    border-radius: 50%;
+    color: #fff;
 }
 nav .fa-sign-out-alt {
-  font-size: 28px;
-  color: rgb(102, 51, 153);
+    font-size: 28px;
+    color: rgb(102, 51, 153);
 }
 
 .vb {
     background-color: #663399;
     height: 480px;
-  }
+}
 
-  .vb p {
+.vb p {
     font-size: 22px;
-    color: #FFF;
+    color: #fff;
     padding-right: 40px;
-  }
+}
 
-  .vb a {
-    background-color: #FFF;
+.vb a {
+    background-color: #fff;
     border-radius: 50px;
     padding: 10px 40px;
     margin-left: 60px;
     font-size: 20px;
     color: #663399;
-  }
+}
 
-  .vb a:hover, .vb a:active {
+.vb a:hover,
+.vb a:active {
     text-decoration: none;
-  }
+}
 
-  .benefits {
+.benefits {
     margin-top: 150px;
-  }
+}
 
-  .benefits p {
+.benefits p {
     color: #555;
     padding: 0px 30px;
-  }
+}
 
-  .benefits .card {
+.benefits .card {
     -webkit-box-shadow: 0px 0px 6px #aaa;
-            box-shadow: 0px 0px 6px #aaa;
+    box-shadow: 0px 0px 6px #aaa;
     height: 360px;
-  }
+}
 
-  .benefits .img-logo {
+.benefits .img-logo {
     background-color: #663399;
     margin: 30px auto 30px auto;
     padding: 0px 25px;
-  }
+}
 
-  .benefits .img-logo img {
+.benefits .img-logo img {
     height: 55px;
     width: 55px;
-  }
+}
 
-  .builder {
+.builder {
     overflow: hidden;
     margin-top: 40px;
-  }
+}
 
-  .builder .magenta {
+.builder .magenta {
     background-color: #663399;
     padding-top: 30px;
-  }
+}
 
-  .builder .show {
+.builder .show {
     height: 700px;
-  }
+}
 
-  .builder .white {
+.builder .white {
     background-color: #eee;
     padding-top: 140px;
-  }
+}
 
-  .builder .white p {
+.builder .white p {
     line-height: 1.8;
     font-size: 18px;
     margin-bottom: 30px;
-  }
+}
 
-  .builder .white a {
-    color: #FFF;
+.builder .white a {
+    color: #fff;
     border-radius: 50px;
     padding: 10px 40px;
     margin-top: 20px;
     font-size: 20px;
     background-color: #663399;
-  }
+}
 
-  .builder .white a:hover, .builder .white a:active {
+.builder .white a:hover,
+.builder .white a:active {
     text-decoration: none;
-  }
+}
 
-  .builder .photo {
+.builder .photo {
     background-image: url(../images/Rectangle\ 122.png);
     background-position: center;
     background-size: cover;
-  }
-
+}
 
 /* Login & Applay now */
 .login-form {
-  padding-top: 60px;
-  padding-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .login-form .view {
-  background-image: linear-gradient(
-      rgba(76, 44, 109, 0.4),
-      rgba(76, 44, 109, 0.4)
-    ),
-    url(../images/login.png);
-  background-position: center;
-  background-size: cover;
-  border-radius: 0px 45px 45px 0px;
+    background-image: linear-gradient(
+            rgba(76, 44, 109, 0.4),
+            rgba(76, 44, 109, 0.4)
+        ),
+        url(../images/login.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 0px 45px 45px 0px;
 }
 
 .login-form img {
-  width: 100%;
+    width: 100%;
 }
 
 .login-form h2 {
-  margin-top: 80px;
+    margin-top: 80px;
 }
 
 .login-form .rhead {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .login-form input {
-  border-radius: 50px;
-  outline: none;
-  border: 1px solid #663399;
-  padding-left: 30px;
-  color: #000;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid #663399;
+    padding-left: 30px;
+    color: #000;
 }
 
 .login-form input::-webkit-input-placeholder {
-  color: #000;
+    color: #000;
 }
 
 .login-form input:-ms-input-placeholder {
-  color: #000;
+    color: #000;
 }
 
 .login-form input::-ms-input-placeholder {
-  color: #000;
+    color: #000;
 }
 
 .login-form input::placeholder {
-  color: #000;
+    color: #000;
 }
 
 .login-form .login-button {
-  background-color: #663399;
-  border-radius: 50px;
-  color: #fff;
-  padding: 8px;
+    background-color: #663399;
+    border-radius: 50px;
+    color: #fff;
+    padding: 8px;
 }
 
 .pop #popup {
-  background-color: #663399 !important;
-  border-radius: 50px;
-  color: #fff;
-  padding: 8px;
-  display: block;
-  margin: 50px auto;
-  width: 100px;
-  border: none;
-  outline: none;
+    background-color: #663399 !important;
+    border-radius: 50px;
+    color: #fff;
+    padding: 8px;
+    display: block;
+    margin: 50px auto;
+    width: 100px;
+    border: none;
+    outline: none;
 }
 
 .login-form .forget {
-  border-bottom: 1px solid steelblue;
+    border-bottom: 1px solid steelblue;
 }
 
 .login-form .forget:hover,
 .login-form .forget:active {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .login-form .apply-link {
-  border-bottom: 1px solid #000;
-  color: #000;
+    border-bottom: 1px solid #000;
+    color: #000;
 }
 
 .login-form .apply-link:hover,
 .login-form .apply-link:active {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .login-form .dont-have {
-  margin-top: 80px;
+    margin-top: 80px;
 }
 .login-form .dont-have-r {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 .login-form a {
-  color: black;
+    color: black;
 }
 
 /* PopUp */
 
 /*--thank you pop starts here--*/
-.thank-you-pop{
-	width:100%;
- 	padding:20px;
-	text-align:center;
+.thank-you-pop {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
 }
-.thank-you-pop img{
-	width:76px;
-	height:auto;
-	margin:0 auto;
-	display:block;
-	margin-bottom:25px;
+.thank-you-pop img {
+    width: 76px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 25px;
 }
 
-.thank-you-pop h1{
-	font-size: 42px;
+.thank-you-pop h1 {
+    font-size: 42px;
     margin-bottom: 25px;
-	color:#5C5C5C;
+    color: #5c5c5c;
 }
-.thank-you-pop p{
-	font-size: 20px;
+.thank-you-pop p {
+    font-size: 20px;
     margin-bottom: 27px;
- 	color:#5C5C5C;
+    color: #5c5c5c;
 }
-.thank-you-pop h3.cupon-pop{
-	font-size: 25px;
+.thank-you-pop h3.cupon-pop {
+    font-size: 25px;
     margin-bottom: 40px;
-	color:#222;
-	display:inline-block;
-	text-align:center;
-	padding:10px 20px;
-	border:2px dashed #222;
-	clear:both;
-	font-weight:normal;
+    color: #222;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    border: 2px dashed #222;
+    clear: both;
+    font-weight: normal;
 }
-.thank-you-pop h3.cupon-pop span{
-	color:#03A9F4;
+.thank-you-pop h3.cupon-pop span {
+    color: #03a9f4;
 }
-.thank-you-pop a{
-	display: inline-block;
+.thank-you-pop a {
+    display: inline-block;
     margin: 0 auto;
     padding: 9px 20px;
     color: #fff;
     text-transform: uppercase;
     font-size: 14px;
-    background-color: #8BC34A;
+    background-color: #8bc34a;
     border-radius: 17px;
 }
-.thank-you-pop a i{
-	margin-right:5px;
-	color:#fff;
+.thank-you-pop a i {
+    margin-right: 5px;
+    color: #fff;
 }
-#ignismyModal .modal-header{
-    border:0px;
+#ignismyModal .modal-header {
+    border: 0px;
 }
 
-.popup input
-{
+.popup input {
     background: #ddd;
     width: 330px;
     height: 45px;
     border: none;
 }
 
-.popup .lp
-{
+.popup .lp {
     font-size: 13px;
 }
-
 
 .popup .sub {
     background-color: #663399;
     border-radius: 50px;
     color: #fff;
-    padding:10px;
+    padding: 10px;
     width: 330px;
     height: 50px;
-    margin:5px 0px 25px 10px;
-
-  }
-
+    margin: 5px 0px 25px 10px;
+}
 
 /*--thank you pop ends here--*/
 
-
 /* Carousel */
 .carousel-control-next-icon {
-  background-color: rgb(102, 51, 153);
-  border-radius: 50%;
-  margin: 10px;
+    background-color: rgb(102, 51, 153);
+    border-radius: 50%;
+    margin: 10px;
 }
 .carousel-control-prev-icon {
-  background-color: rgb(102, 51, 153);
-  border-radius: 50%;
-  margin: 10px;
+    background-color: rgb(102, 51, 153);
+    border-radius: 50%;
+    margin: 10px;
 }
 
 .first-div h6 {
-  color: rgb(102, 51, 153);
+    color: rgb(102, 51, 153);
 }
 .first-div button {
-  border: none;
-  border-radius: 50px;
-  padding: 15px;
-  width: 100%;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    width: 100%;
 }
 
 .first-div .considered-button {
-  color: #fff;
-  background-color: rgb(102, 51, 153);
-  font-size: 20px;
+    color: #fff;
+    background-color: rgb(102, 51, 153);
+    font-size: 20px;
 }
 .carousel-item .download-button {
-  color: #fff;
-  background-color: rgb(102, 51, 153);
-  font-size: 20px;
-  position: relative;
-  bottom: 40px;
-  border-radius: 50px;
-  padding: 5px;
-  width: 50%;
-  display: block;
-  margin: 0 auto;
+    color: #fff;
+    background-color: rgb(102, 51, 153);
+    font-size: 20px;
+    position: relative;
+    bottom: 40px;
+    border-radius: 50px;
+    padding: 5px;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
 }
 .first-div .timer-button {
-  color: #111;
-  background-color: #eee;
-  font-size: 20px;
+    color: #111;
+    background-color: #eee;
+    font-size: 20px;
 }
 
 .third-div .highlights {
-  color: #555;
+    color: #555;
 }
 .third-div ul li {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 .third-div ul li a:link,
 .third-div ul li a:visited {
-  color: #777;
+    color: #777;
 }
 .third-div ul li a:hover,
 .third-div ul li a:active {
-  text-decoration: none;
+    text-decoration: none;
 }
 .third-div .company {
-  color: rgb(102, 51, 153);
+    color: rgb(102, 51, 153);
 }
 
 .investors-cards .invest-header {
-  background-color: rgb(102, 51, 153);
-  padding: 10px;
-  color: #fff;
-  border-radius: 15px 15px 0 0;
+    background-color: rgb(102, 51, 153);
+    padding: 10px;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
 }
 
 .investors-cards .invest-body {
-  background-color: rgb(250, 249, 249);
-  padding: 10px;
+    background-color: rgb(250, 249, 249);
+    padding: 10px;
 }
 
 .investors-cards .invest-body ul li .arrow {
-  color: rgb(102, 51, 153);
-  margin: 6px;
+    color: rgb(102, 51, 153);
+    margin: 6px;
 }
 
 /* Opportunity main Deals Page */
 
 .main-deals nav {
-  background-color: rgb(102, 51, 153);
+    background-color: rgb(102, 51, 153);
 }
 
 .main-deals nav li {
-  padding: 8px 16px;
-  border: 1px solid #fff;
-  border-top: none;
-  margin-top: 0px;
-  color: rgb(102, 51, 153);
+    padding: 8px 16px;
+    border: 1px solid #fff;
+    border-top: none;
+    margin-top: 0px;
+    color: rgb(102, 51, 153);
 }
 .main-deals nav .first-child {
-  margin-left: 100px;
+    margin-left: 100px;
 }
 
 .main-deals nav li .dropdown-menu {
-  color: rgb(102, 51, 153) !important;
-  background-color: rgb(102, 51, 153);
+    color: rgb(102, 51, 153) !important;
+    background-color: rgb(102, 51, 153);
 }
 
 .main-deals nav li:hover,
 .main-deals nav li:active {
-  background-color: #fff;
-  color: #fff !important;
+    background-color: #fff;
+    color: #fff !important;
 }
 
 .main-deals nav li a:link,
 .main-deals nav li a:visited {
-  color: #fff !important;
+    color: #fff !important;
 }
 
 .main-deals nav li a:hover,
 .main-deals nav li a:active {
-  color: rgb(102, 51, 153) !important;
+    color: rgb(102, 51, 153) !important;
 }
 
 .main-deals nav .dropdown-item:hover,
 .main-deals nav .dropdown-item:active {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .main-deals nav .user-icon .fa-user {
-  background-color: #fff;
-  padding: 10px 12px;
-  font-size: 24px;
-  margin-right: 20px;
-  border-radius: 50%;
-  color: rgb(156, 146, 146);
+    background-color: #fff;
+    padding: 10px 12px;
+    font-size: 24px;
+    margin-right: 20px;
+    border-radius: 50%;
+    color: rgb(156, 146, 146);
 }
 .main-deals nav .fa-sign-out-alt {
-  font-size: 28px;
-  color: #fff;
+    font-size: 28px;
+    color: #fff;
 }
 
 .white-line {
-  width: 94%;
-  height: 2px;
-  background-color: #fff;
-  display: block;
+    width: 94%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
 }
 
 .welcome .welcome-text {
-  background-color: rgb(102, 51, 153);
-  color: #fff;
-  padding: 150px;
-  height: 490px;
+    background-color: rgb(102, 51, 153);
+    color: #fff;
+    padding: 150px;
+    height: 490px;
 }
 .welcome .welcome-img {
-  background-image: url(../images/cover.png);
-  background-position: center;
-  background-size: cover;
-  height: 550px;
-  border-radius: 0px 0px 0px 30px;
+    background-image: url(../images/cover.png);
+    background-position: center;
+    background-size: cover;
+    height: 550px;
+    border-radius: 0px 0px 0px 30px;
 }
 
-.welcome .apply
-{
+.welcome .apply {
     border-radius: 20px;
     background-color: #fff;
     border: none;
@@ -567,8 +560,7 @@ nav .fa-sign-out-alt {
     margin: 15px 0px;
 }
 
-.goLogin
-{
+.goLogin {
     border-radius: 20px;
     background-color: rgb(102, 51, 153);
     border: none;
@@ -578,213 +570,274 @@ nav .fa-sign-out-alt {
 }
 
 .select-opp h3 {
-  margin: 30px 0px 40px 130px;
+    margin: 30px 0px 40px 130px;
 }
 
 .select-opp .opp,
 .select-opp .opp:visited {
-  border-radius: 50px;
-  padding: 15px;
-  font-size: 16px;
-  width: 100%;
-  color: rgb(102, 51, 153);
-  border: 1px solid rgb(102, 51, 153);
-  background-color: #fff;
+    border-radius: 50px;
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    color: rgb(102, 51, 153);
+    border: 1px solid rgb(102, 51, 153);
+    background-color: #fff;
 }
 
 .select-opp .opp:hover,
 .select-opp .opp:active {
-  border: none;
-  color: #fff;
-  background-color: rgb(102, 51, 153);
+    border: none;
+    color: #fff;
+    background-color: rgb(102, 51, 153);
 }
 
 .open-opp h3 {
-  margin: 50px 0px 55px 130px;
+    margin: 50px 0px 55px 130px;
 }
 
 .open-opp .card .btn {
-  background-color: rgb(102, 51, 153);
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  width: 150px;
-  font-size: small;
+    background-color: rgb(102, 51, 153);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    font-size: small;
 }
 .open-opp .card .arrow {
-  color: rgb(102, 51, 153);
+    color: rgb(102, 51, 153);
 }
 
 .open-opp .opp {
-  border-radius: 50px;
-  padding: 11px 22px;
-  font-size: 14px;
-  width: 100%;
-  border: none;
-  background-color: rgb(102, 51, 153);
-  color: #fff;
-  margin: 40px auto;
+    border-radius: 50px;
+    padding: 11px 22px;
+    font-size: 14px;
+    width: 100%;
+    border: none;
+    background-color: rgb(102, 51, 153);
+    color: #fff;
+    margin: 40px auto;
 }
 
 .br-line {
-  width: 85%;
-  height: 2px;
-  background-color: rgb(201, 198, 198);
-  display: block;
-  margin: 10px auto;
+    width: 85%;
+    height: 2px;
+    background-color: rgb(201, 198, 198);
+    display: block;
+    margin: 10px auto;
 }
 
 /* protal Home */
 .content .app-header {
-  background-color: rgb(102, 51, 153);
-  padding: 10px;
-  color: #fff;
-  border-radius: 15px 15px 0 0;
+    background-color: rgb(102, 51, 153);
+    padding: 10px;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
 }
 
 .content .app-body {
-  background-color: rgb(250, 249, 249);
-  padding: 10px;
-  box-shadow: 2px 2px 4px #fff;
+    background-color: rgb(250, 249, 249);
+    padding: 10px;
+    box-shadow: 2px 2px 4px #fff;
 }
 
 .top-tabes {
-  background-color: rgb(102, 51, 153);
-  border-radius: 15px;
-  padding: 20px;
+    background-color: rgb(102, 51, 153);
+    border-radius: 15px;
+    padding: 20px;
 }
 
 .top-tabes .tabe {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
 }
 
 .top-tabes .tabe .icon {
-  background-color: rgb(102, 51, 153);
-  border-radius: 50%;
-  padding: 3px;
-  width: 60px;
-  height: 60px;
-  margin: 1px auto;
+    background-color: rgb(102, 51, 153);
+    border-radius: 50%;
+    padding: 3px;
+    width: 60px;
+    height: 60px;
+    margin: 1px auto;
 }
 
 .top-tabes .tabe .icon .ico {
-  color: #fff;
-  font-size: 25px;
-  width: 10px;
-  height: 10px;
-  position: relative;
-  right: 4px;
+    color: #fff;
+    font-size: 25px;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    right: 4px;
 }
 
 .tabe p {
-  margin: 4px;
-  font-size: 14px;
+    margin: 4px;
+    font-size: 14px;
 }
 
-
-
-.form
-{
-  border: 2px solid rgb(102, 51, 153);
-  border-radius: 25px;
-  min-height: 500px;
+.form {
+    border: 2px solid rgb(102, 51, 153);
+    border-radius: 25px;
+    min-height: 500px;
 }
-.form h3, .form h5
-{
-  color: rgb(102, 51, 153);
+.form h3,
+.form h5 {
+    color: rgb(102, 51, 153);
 }
 
-.form button
-{
-  background-color: rgb(102, 51, 153);
-  color: #fff;
+.form button {
+    background-color: rgb(102, 51, 153);
+    color: #fff;
 }
-.form button:hover
-{
-  color: rgb(102, 51, 153);
-  border:1px solid rgb(102, 51, 153);
-  background-color: #fff;
+.form button:hover {
+    color: rgb(102, 51, 153);
+    border: 1px solid rgb(102, 51, 153);
+    background-color: #fff;
 }
 
-.tabs-menu .tabutton
-{
-  background-color: rgb(102, 51, 153);
-  color: #fff;
-  margin: 2px 10px;
-  border-radius: 5px;
-}
-
-footer {
-  padding: 30px 0px 60px 0px;
-  background-color: rgb(102, 51, 153);
-  color: #fff;
+.tabs-menu .tabutton {
+    background-color: rgb(102, 51, 153);
+    color: #fff;
+    margin: 2px 10px;
+    border-radius: 5px;
 }
 
 .open-opp h2 {
-  margin: 60px 0px 40px 0px;
+    margin: 60px 0px 40px 0px;
 }
 
-.dropdown-toggle::after
-{
+.dropdown-toggle::after {
     display: none;
 }
 
-@media (max-width: 767px) {
-  nav .first-child {
-    width: 100%;
-    margin-left: 0px !important;
-    margin-top: 30px !important;
+.loader {
+    border: 16px solid #663399; /* Light grey */
+    border-top: 16px solid #fff;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
-  nav .user-icon {
-    margin: 20px 0px !important;
+  #overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #663399;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
   }
-  .welcome-text{
-    padding:150px 10px !important;
+
+
+
+  .card-signature
+  {
+      margin: 40px 0px;
+      border: 2px solid #663399;
+      border-radius: 15px;
   }
-  .builder h2{
-    font-size: 22px;
+
+  .btn-move
+  {
+    background-color: rgb(102, 51, 153);
+    color: #fff;
   }
-  .first-div h3{
-      font-size: 22px;
+
+  .nav .active
+  {
+      background-color: rgb(102, 51, 153);
+      color: #fff;
   }
-  .popup .sub {
-    width: 250px;
-    margin-left: 0px;
+
+  .nav .nav-link
+  {
+      color: rgb(102, 51, 153);
+      background-color: #fff;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    padding: 30px 0px 60px 0px;
+    background-color: rgb(102, 51, 153);
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    nav .first-child {
+        width: 100%;
+        margin-left: 0px !important;
+        margin-top: 30px !important;
+    }
+
+    nav .user-icon {
+        margin: 20px 0px !important;
+    }
+    .welcome-text {
+        padding: 150px 10px !important;
+    }
+    .builder h2 {
+        font-size: 22px;
+    }
+    .first-div h3 {
+        font-size: 22px;
+    }
+    .popup .sub {
+        width: 250px;
+        margin-left: 0px;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  nav .first-child {
-    width: 100%;
-    margin-left: 0px !important;
-    margin-top: 30px !important;
-  }
+    nav .first-child {
+        width: 100%;
+        margin-left: 0px !important;
+        margin-top: 30px !important;
+    }
 
-  nav .user-icon {
-    margin: 20px 0px !important;
-  }
-  .welcome-text{
-    padding:150px 10px !important;
-  }
-  .benefits .card{
-    height: 420px;
-  }
-  .first-div h3{
-    font-size: 22px;
-  }
-  .select-opp .opp,
-  .select-opp .opp:visited {
-    font-size: 12px;
-  }
+    nav .user-icon {
+        margin: 20px 0px !important;
+    }
+    .welcome-text {
+        padding: 150px 10px !important;
+    }
+    .benefits .card {
+        height: 420px;
+    }
+    .first-div h3 {
+        font-size: 22px;
+    }
+    .select-opp .opp,
+    .select-opp .opp:visited {
+        font-size: 12px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .lead{
-    margin-top: -60px;
-  }
-  .lead2{
-    margin-top: 0px !important;
-  }
+    .lead {
+        margin-top: -60px;
+    }
+    .lead2 {
+        margin-top: 0px !important;
+    }
 }

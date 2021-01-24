@@ -13,13 +13,14 @@ class ProfileController extends Controller
     {
         $user = auth()->user();
         $profile = $user->profile;
+        // return $profile;
         return view('site.pages.profile', compact('user', 'profile'));
     }
 
     public function updateProfile(ProfileRequest $request)
     {
-        $id = auth()->user()->id;
-        User::find($id)->update([
+        $user = auth()->user();
+        $user->update([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name
         ]);
@@ -44,7 +45,9 @@ class ProfileController extends Controller
 
         $data['image'] = $fileName;
 
-        Profile::create($data);
+        $profile = $user->profile;
+
+        $profile->update($data);
 
         return redirect()->route('signature.index')->with(['success' => 'Your Profile Updated Successfully']);
 

@@ -1,0 +1,21 @@
+# Tasks
+- E2E testing need to be
+- pw managment
+- form data
+- Placeholder
+- vc popup
+
+
+
+# Approved
+- thank you shuldn't present in case of error.
+- the mobile verification to be as a pop directlly.
+- Rely on the image for the logout/ profile, and remove the icon.
+- the initial page is the ladning page
+- Site has  delay and show the css with some delay
+- the forms need to be updated for the auto fill
+- Placeholder to be updated to labels:
+- Send Relevant Mail Here, when it checked it give error
+- when adding the profile successfully, then move to the pdf and come back to the profile page, and click on next, it give exception
+- the signature area is not working correctlly.
+- preloader page

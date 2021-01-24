@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/home', 'HomeController@index')->name('home');
 
 
-// Auth::routes();
+Auth::routes();
 
 // Auth
 Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function () {
@@ -25,6 +25,7 @@ Route::group(['namespace' => 'Auth', 'middleware' => 'guest'], function () {
     Route::post('login', 'LoginController@login')->name('login.submit');
     Route::get('register', 'RegisterController@showSignupForm')->name('register');
     Route::post('register', 'RegisterController@create')->name('register.submit');
+    Route::get('next', 'RegisterController@next')->name('register.next');
     Route::post('verifyUser', 'RegisterController@verifyUser')->name('verifyUser');
     Route::get('verifyUser', 'RegisterController@showVerificationForm')->name('showVerificationForm');
 });

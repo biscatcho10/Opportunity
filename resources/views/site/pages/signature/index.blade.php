@@ -1,111 +1,112 @@
 @extends('layouts.app')
 @section('css')
 <style>
-    #canvasDiv{
-    position: relative;
-    border: 2px dashed grey;
-    height:300px;
+    #canvasDiv {
+        position: relative;
+        border: 2px dashed grey;
+        height: 300px;
+        width: 1046px;
     }
+
 </style>
 
-	<!--Internal   Notify -->
+<!--Internal   Notify -->
 <!-- Signer CSS -->
 <link href="{{ URL::asset('signature/css/style.css') }}" rel="stylesheet">
 <script src="{{ URL::asset('signature/js/jscolor.js') }}"></script>
-<link href="https://fonts.googleapis.com/css?family=B612+Mono:400,400i,700|Charm:400,700|EB+Garamond:400,400i,700|Noto+Sans+TC:400,700|Open+Sans:400,400i,700|Pacifico|Reem+Kufi|Scheherazade:400,700|Tajawal:400,700&amp;subset=arabic" crossorigin="anonymous" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Cookie|Courgette|Dr+Sugiyama|Grand+Hotel|Great+Vibes|League+Script|Meie+Script|Miss+Fajardose|Niconne|Pacifico|Petit+Formal+Script|Rochester|Sacramento|Tangerine" crossorigin="anonymous" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css?family=B612+Mono:400,400i,700|Charm:400,700|EB+Garamond:400,400i,700|Noto+Sans+TC:400,700|Open+Sans:400,400i,700|Pacifico|Reem+Kufi|Scheherazade:400,700|Tajawal:400,700&amp;subset=arabic"
+    crossorigin="anonymous" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Cookie|Courgette|Dr+Sugiyama|Grand+Hotel|Great+Vibes|League+Script|Meie+Script|Miss+Fajardose|Niconne|Pacifico|Petit+Formal+Script|Rochester|Sacramento|Tangerine"
+    crossorigin="anonymous" rel="stylesheet">
 <!-- Bootstrap CSS -->
 @endsection
 
 @section('content')
 
- @include('site.includes.dark_nav2')
+@include('site.includes.dark_nav2')
 
 @if (session()->has('success'))
-    <script>
-        window.onload = function() {
-            notif({
-                msg: "{{session()->get('success')}}",
-                type: "success"
-            })
-        }
-    </script>
+<script>
+    window.onload = function () {
+        notif({
+            msg: "{{session()->get('success')}}",
+            type: "success"
+        })
+    }
+
+</script>
 @endif
 <div class="container" style="min-height: 700px">
     <div class="row">
-    <div class="card w-50 mx-auto d-block " style="width: 300px">
-        <div class="card-body">
-            <div class="tabs-menu w-100 mx-auto d-block">
-                <!-- Tabs -->
-                <ul class="nav nav-tabs ">
-                    <li class="active">
-                        <a class="btn btn-sm tabutton" href="#profile" data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Signature Pad</span> </a>
+        <div class="card w-100 mx-auto d-block  card-signature">
+            <div class="card-body">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="#profile" data-toggle="tab" aria-expanded="true">Signature Pad</a>
                     </li>
-                    <li class="">
-                        <a  class="btn btn-sm tabutton mx-2" href="#textSign"  data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Signature Text</span> </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#textSign" data-toggle="tab" aria-expanded="false">Signature Text</a>
                     </li>
-                    <li class="">
-                        <a class="btn btn-sm tabutton" href="#uploadSign"  data-toggle="tab" aria-expanded="false"> <span class="visible-xs"><i class="las la-images tx-15 mr-1"></i></span> <span class="hidden-xs">Upload Signature</span> </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#uploadSign" data-toggle="tab" aria-expanded="false">Upload Text</a>
                     </li>
                 </ul>
-            </div>
-            <div class="tab-content border-left border-bottom border-right border-top-0 p-4">
 
-
-                <div class="tab-pane " id="uploadSign">
-                    <h4 class=" text-center ">Upload Signature</h4>
-                   <form action="{{route('upload.save')}}" method="POST" enctype="multipart/form-data">
-                       @csrf
-                       <div class="col-sm-12 col-md-12">
-                           <input type="file" name="signature" class=" form-control my-3" accept=",.jpg, .png, image/jpeg, image/png"
-                                  data-height="70" />
-                                  <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                <div class="tab-content border-left border-bottom border-right border-top-0 p-4">
+                    <div class="tab-pane " id="uploadSign">
+                        <h4 class=" lead ">Upload Signature</h4>
+                        <form action="{{route('upload.save')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="col-sm-12 col-md-12">
+                                <input type="file" name="signature" class=" form-control my-5"
+                                    accept=",.jpg, .png, image/jpeg, image/png" data-height="70" />
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-move w-25">Save</button>
                                 </div>
-                       </div><br>
+                            </div><br>
+                        </form>
+                    </div>
 
-
-
-                   </form>
-
-
-
-                </div>
-                <div class="tab-pane" id="profile">
-                    <div class="row">
-                        <div class="col-sm-12">
-                                <h4 class="text-center ">Add Signture</h4>
+                    <div class="tab-pane" id="profile">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="lead">Add Signture</h4>
                                 <br>
                                 <div id="canvasDiv"></div>
                                 <br>
-                                <img id="download" src=""  download="image.png">
-                                <button type="button" class="btn btn-danger" id="reset-btn">Clear</button>
-                                <button type="button" class="btn btn-primary" onClick="download()" id="btn-save">Save</button>
-                            <form id="signatureform" action="{{route('saveSign.add') }}" style="display:none" method="post">
-                                @csrf
-                                <input type="hidden" id="signature" name="signature">
-                                <input type="hidden" name="signaturesubmit" value="1">
-                            </form>
+                                <img id="download" src="" download="image.png">
+                                <button type="button" class="btn btn-dark float-right mx-2" id="reset-btn">Clear</button>
+                                <button type="button" class="btn btn-move float-right" onClick="download()"
+                                    id="btn-save">Save</button>
+                                <form id="signatureform" action="{{route('saveSign.add') }}" style="display:none"
+                                    method="post">
+                                    @csrf
+                                    <input type="hidden" id="signature" name="signature">
+                                    <input type="hidden" name="signaturesubmit" value="1">
+                                </form>
                             </div>
                         </div>
                     </div>
+
                     <div class="tab-pane" id="textSign">
                         <div class="row">
                             <div class="col-sm-12">
-                                    <h3 class="text-center">Signture Text</h3>
-                                    <br>
+                                <h3 class="lead">Signture Text</h3>
+                                <br>
+                                <form method="post" action="{{ route('signText.save')}}" id="signform">
+                                    @csrf
+                                    <input type="hidden" id="signatureText" name="signature">
 
-                                    <form method="post" action="{{ route('signText.save')}}" id="signform">
-                                        @csrf
-                                        <input type="hidden" id="signatureText" name="signature">
-
-                                        <div class="form-group">
-                                          <div class="row">
-                                              <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
                                                 <label>Type your signature</label>
-                                                <input type="text" class="form-control signature-input" name="" placeholder="Type your signature" maxlength="18" value="Your Name">
-                                              </div>
-                                              <div class="col-md-6">
+                                                <input type="text" class="form-control signature-input" name=""
+                                                    placeholder="Type your signature" maxlength="18" value="Your Name">
+                                            </div>
+                                            <div class="col-md-6">
                                                 <label>Select font</label>
                                                 <select class="form-control signature-font" name="">
                                                     <option value="Lato">Lato</option>
@@ -125,298 +126,303 @@
                                                     <option value="Cookie">Cookie</option>
                                                     <option value="Grand Hotel">Grand Hotel</option>
                                                 </select>
-                                              </div>
-                                          </div>
+                                            </div>
+                                        </div>
 
-                                      </div>
-                                        <div class="form-group">
-                                          <div class="row">
-                                              <div class="col-md-4">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
                                                 <label>Weight</label>
                                                 <select class="form-control signature-weight" name="">
                                                     <option value="normal">Regular</option>
                                                     <option value="bold">Bold</option>
                                                     <option value="lighter">Lighter</option>
                                                 </select>
-                                              </div>
-                                              <div class="col-md-4">
+                                            </div>
+                                            <div class="col-md-4">
                                                 <label>Color</label>
-                                                <input  class="form-control signature-color jscolor { valueElement:null,borderRadius:'1px', borderColor:'#e6eaee',value:'000000',zIndex:'99999', onFineChange:'updateSignatureColor(this)'}" readonly="">
-                                              </div>
-                                              <div class="col-md-4">
+                                                <input
+                                                    class="form-control signature-color jscolor { valueElement:null,borderRadius:'1px', borderColor:'#e6eaee',value:'000000',zIndex:'99999', onFineChange:'updateSignatureColor(this)'}"
+                                                    readonly="">
+                                            </div>
+                                            <div class="col-md-4">
                                                 <label>Style</label>
                                                 <select class="form-control signature-style" name="">
                                                     <option value="normal">Regular</option>
                                                     <option value="italic">Italic</option>
                                                 </select>
-                                              </div>
-                                          </div>
+                                            </div>
                                         </div>
+                                    </div>
                                     <div class="divider"></div>
-                                    <h4 class="text-center">Preview</h4>
+                                    <h4 class="lead mt-5">Preview</h4>
                                     <div class="text-signature-preview">
-                                        <div class="text-signature" name="text" id="text-signature" style="color: #000000">Your Name</div>
+                                        <div class="text-signature bold h3" name="text" id="text-signature" style="color: #663399">Your Name</div>
                                     </div>
                                     <br>
-                                    <input type="button" class="btn btn-primary form-control btnsave" id="btn" value="Add Signature">
-                                  </form>
+                                    <input type="button" class="btn btn-move form-control btnsave w-25 float-right" id="btn" value="Add Signature" >
+                                </form>
 
-                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-@endsection
-@section('js')
-<script>
-    $(document).ready(() => {
-        var canvasDiv = document.getElementById('canvasDiv');
-        var canvas = document.createElement('canvas');
-        canvas.setAttribute('id', 'canvas');
-        canvas.type='file';
+    @endsection
+    @section('js')
+    <script>
+        $(document).ready(() => {
+            var canvasDiv = document.getElementById('canvasDiv');
+            var canvas = document.createElement('canvas');
+            canvas.setAttribute('id', 'canvas');
+            canvas.type = 'file';
 
-        canvasDiv.appendChild(canvas);
-        $("#canvas").attr('height', $("#canvasDiv").outerHeight());
-        $("#canvas").attr('width', $("#canvasDiv").width());
-        if (typeof G_vmlCanvasManager != 'undefined') {
-            canvas = G_vmlCanvasManager.initElement(canvas);
-        }
+            canvasDiv.appendChild(canvas);
+            $("#canvas").attr('height', $("#canvasDiv").outerHeight());
+            $("#canvas").attr('width', $("#canvasDiv").width());
+            if (typeof G_vmlCanvasManager != 'undefined') {
+                canvas = G_vmlCanvasManager.initElement(canvas);
+            }
 
-        context = canvas.getContext("2d");
-        $('#canvas').mousedown(function(e) {
-            var offset = $(this).offset()
-            var mouseX = e.pageX - this.offsetLeft;
-            var mouseY = e.pageY - this.offsetTop;
-
-            paint = true;
-            addClick(e.pageX - offset.left, e.pageY - offset.top);
-            redraw();
-        });
-
-        $('#canvas').mousemove(function(e) {
-            if (paint) {
+            context = canvas.getContext("2d");
+            $('#canvas').mousedown(function (e) {
                 var offset = $(this).offset()
-                //addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
-                addClick(e.pageX - offset.left, e.pageY - offset.top, true);
-                console.log(e.pageX, offset.left, e.pageY, offset.top);
+                var mouseX = e.pageX - this.offsetLeft;
+                var mouseY = e.pageY - this.offsetTop;
+
+                paint = true;
+                addClick(e.pageX - offset.left, e.pageY - offset.top);
                 redraw();
-            }
-        });
-
-        $('#canvas').mouseup(function(e) {
-            paint = false;
-        });
-
-        $('#canvas').mouseleave(function(e) {
-            paint = false;
-        });
-
-        var clickX = new Array();
-        var clickY = new Array();
-        var clickDrag = new Array();
-        var paint;
-
-        function addClick(x, y, dragging) {
-            clickX.push(x);
-            clickY.push(y);
-            clickDrag.push(dragging);
-        }
-
-        $("#reset-btn").click(function() {
-            context.clearRect(0, 0, window.innerWidth, window.innerWidth);
-            clickX = [];
-            clickY = [];
-            clickDrag = [];
-        });
-
-        $(document).on('click', '#btn-save', function() {
-            var mycanvas = document.getElementById('canvas');
-            var download = document.getElementById("download");
-           var image = document.getElementById("canvas").toDataURL("image/png")
-                       .replace("image/png", "image/octet-stream");
-          data = download.src=image;
-            //var canvas_img_data = mycanvas.toDataURL('image/png');
-            console.log(data);
-            anchor = $("#signature");
-            anchor.val(data);
-            $("#signatureform").submit();
-        });
-
-        var drawing = false;
-        var mousePos = {
-            x: 0,
-            y: 0
-        };
-        var lastPos = mousePos;
-
-        canvas.addEventListener("touchstart", function(e) {
-            mousePos = getTouchPos(canvas, e);
-            var touch = e.touches[0];
-            var mouseEvent = new MouseEvent("mousedown", {
-                clientX: touch.clientX,
-                clientY: touch.clientY
             });
-            canvas.dispatchEvent(mouseEvent);
-        }, false);
 
-
-        canvas.addEventListener("touchend", function(e) {
-            var mouseEvent = new MouseEvent("mouseup", {});
-            canvas.dispatchEvent(mouseEvent);
-        }, false);
-
-
-        canvas.addEventListener("touchmove", function(e) {
-
-            var touch = e.touches[0];
-            var offset = $('#canvas').offset();
-            var mouseEvent = new MouseEvent("mousemove", {
-                clientX: touch.clientX,
-                clientY: touch.clientY
-            });
-            canvas.dispatchEvent(mouseEvent);
-        }, false);
-
-
-
-        // Get the position of a touch relative to the canvas
-        function getTouchPos(canvasDiv, touchEvent) {
-            var rect = canvasDiv.getBoundingClientRect();
-            return {
-                x: touchEvent.touches[0].clientX - rect.left,
-                y: touchEvent.touches[0].clientY - rect.top
-            };
-        }
-
-
-        var elem = document.getElementById("canvas");
-
-        var defaultPrevent = function(e) {
-            e.preventDefault();
-        }
-        elem.addEventListener("touchstart", defaultPrevent);
-        elem.addEventListener("touchmove", defaultPrevent);
-
-        function redraw() {
-            //
-            lastPos = mousePos;
-            for (var i = 0; i < clickX.length; i++) {
-                context.beginPath();
-                if (clickDrag[i] && i) {
-                    context.moveTo(clickX[i - 1], clickY[i - 1]);
-                } else {
-                    context.moveTo(clickX[i] - 1, clickY[i]);
+            $('#canvas').mousemove(function (e) {
+                if (paint) {
+                    var offset = $(this).offset()
+                    //addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+                    addClick(e.pageX - offset.left, e.pageY - offset.top, true);
+                    console.log(e.pageX, offset.left, e.pageY, offset.top);
+                    redraw();
                 }
-                context.lineTo(clickX[i], clickY[i]);
-                context.closePath();
-                context.stroke();
+            });
+
+            $('#canvas').mouseup(function (e) {
+                paint = false;
+            });
+
+            $('#canvas').mouseleave(function (e) {
+                paint = false;
+            });
+
+            var clickX = new Array();
+            var clickY = new Array();
+            var clickDrag = new Array();
+            var paint;
+
+            function addClick(x, y, dragging) {
+                clickX.push(x);
+                clickY.push(y);
+                clickDrag.push(dragging);
             }
+
+            $("#reset-btn").click(function () {
+                context.clearRect(0, 0, window.innerWidth, window.innerWidth);
+                clickX = [];
+                clickY = [];
+                clickDrag = [];
+            });
+
+            $(document).on('click', '#btn-save', function () {
+                var mycanvas = document.getElementById('canvas');
+                var download = document.getElementById("download");
+                var image = document.getElementById("canvas").toDataURL("image/png")
+                    .replace("image/png", "image/octet-stream");
+                data = download.src = image;
+                //var canvas_img_data = mycanvas.toDataURL('image/png');
+                console.log(data);
+                anchor = $("#signature");
+                anchor.val(data);
+                $("#signatureform").submit();
+            });
+
+            var drawing = false;
+            var mousePos = {
+                x: 0,
+                y: 0
+            };
+            var lastPos = mousePos;
+
+            canvas.addEventListener("touchstart", function (e) {
+                mousePos = getTouchPos(canvas, e);
+                var touch = e.touches[0];
+                var mouseEvent = new MouseEvent("mousedown", {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY
+                });
+                canvas.dispatchEvent(mouseEvent);
+            }, false);
+
+
+            canvas.addEventListener("touchend", function (e) {
+                var mouseEvent = new MouseEvent("mouseup", {});
+                canvas.dispatchEvent(mouseEvent);
+            }, false);
+
+
+            canvas.addEventListener("touchmove", function (e) {
+
+                var touch = e.touches[0];
+                var offset = $('#canvas').offset();
+                var mouseEvent = new MouseEvent("mousemove", {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY
+                });
+                canvas.dispatchEvent(mouseEvent);
+            }, false);
+
+
+
+            // Get the position of a touch relative to the canvas
+            function getTouchPos(canvasDiv, touchEvent) {
+                var rect = canvasDiv.getBoundingClientRect();
+                return {
+                    x: touchEvent.touches[0].clientX - rect.left,
+                    y: touchEvent.touches[0].clientY - rect.top
+                };
+            }
+
+
+            var elem = document.getElementById("canvas");
+
+            var defaultPrevent = function (e) {
+                e.preventDefault();
+            }
+            elem.addEventListener("touchstart", defaultPrevent);
+            elem.addEventListener("touchmove", defaultPrevent);
+
+            function redraw() {
+                //
+                lastPos = mousePos;
+                for (var i = 0; i < clickX.length; i++) {
+                    context.beginPath();
+                    if (clickDrag[i] && i) {
+                        context.moveTo(clickX[i - 1], clickY[i - 1]);
+                    } else {
+                        context.moveTo(clickX[i] - 1, clickY[i]);
+                    }
+                    context.lineTo(clickX[i], clickY[i]);
+                    context.closePath();
+                    context.stroke();
+                }
+            }
+        })
+
+    </script>
+
+
+    <script src="{{ URL::asset('signature/js/dom-to-image.min.js') }}"></script>
+
+
+    <!--Internal  Form-elements js-->
+    <script>
+        /*
+         * on signature type
+         */
+        $(".signature-input").keyup(function () {
+            textSignature = $(this).val();
+            if (textSignature == "") {
+                textSignature = "Your Name";
+            }
+            $(".text-signature").text(textSignature);
+        })
+
+        /*
+         * change signature style
+         */
+        $(".signature-style").change(function () {
+            var signatureStyle = $(this).val();
+            $(".text-signature").css("font-style", signatureStyle);
+        })
+
+        /*
+         * change signature color
+         */
+        function updateSignatureColor(color) {
+            $(".text-signature").css("color", "#" + color);
+            $(".signature-color").css("color", "#" + color);
         }
-    })
-</script>
 
+        /*
+         * change signature weight
+         */
+        $(".signature-weight").change(function () {
+            var signatureWeight = $(this).val();
+            $(".text-signature").css("font-weight", signatureWeight);
+        })
 
-<script src="{{ URL::asset('signature/js/dom-to-image.min.js') }}"></script>
+        /*
+         * change signature font
+         */
+        $(".signature-font").change(function () {
+            var signatureFont = $(this).val();
+            $(".text-signature").css("font-family", signatureFont);
+        })
 
+        /*
+         * on stroke size click
+         */
+        $("#signature-stroke").click(function () {
+            stroke = parseInt($(this).attr("stroke"));
+            if (stroke == 3) {
+                updateStroke(5);
+            } else if (stroke == 5) {
+                updateStroke(7);
+            } else if (stroke == 7) {
+                updateStroke(3);
+            }
+        });
 
-<!--Internal  Form-elements js-->
-<script>
-	/*
- * on signature type
- */
-$(".signature-input").keyup(function() {
-    textSignature = $(this).val();
-    if (textSignature == "") {
-        textSignature = "Your Name";
-    }
-    $(".text-signature").text(textSignature);
-})
+        /*
+         * update stroke
+         */
+        function updateStroke(stroke) {
+            modules.stroke(stroke);
+            $("#signature-stroke").attr("stroke", stroke);
+        }
 
-/*
- * change signature style
- */
-$(".signature-style").change(function() {
-    var signatureStyle = $(this).val();
-    $(".text-signature").css("font-style", signatureStyle);
-})
+        /*
+         * change signature font
+         */
+        $(".save-signature").click(function () {
+            signatureType = $("#updateSignature .head-links").find("li.active").attr("type");
+            if (signatureType === "capture") {
+                saveTextSignature();
+            } else if (signatureType === "upload") {
+                saveUploadSignature();
+            } else if (signatureType === "draw") {
+                saveSignature($('#create-signature').getCanvasImage('png'));
+            }
+        });
 
-/*
- * change signature color
- */
-function updateSignatureColor(color) {
-    $(".text-signature").css("color", "#"+color);
-    $(".signature-color").css("color", "#"+color);
-}
+        $(document).on('click', '.btnsave', function (e) {
+            domtoimage.toPng(document.getElementById('text-signature'), {
+                    quality: 0.95
+                })
+                .then(function (dataUrl) {
+                    var link = document.createElement('a');
+                    link.download = 'my-image-name.png';
+                    link.href = dataUrl;
+                    link.click();
+                    console.log(dataUrl)
+                    anchor = $("#signatureText");
+                    anchor.val(dataUrl);
+                    $("#signform").submit();
+                });
+        });
 
-/*
- * change signature weight
- */
-$(".signature-weight").change(function() {
-    var signatureWeight = $(this).val();
-    $(".text-signature").css("font-weight", signatureWeight);
-})
+    </script>
 
-/*
- * change signature font
- */
-$(".signature-font").change(function() {
-    var signatureFont = $(this).val();
-    $(".text-signature").css("font-family", signatureFont);
-})
-
-/*
- * on stroke size click
- */
-$("#signature-stroke").click(function() {
-    stroke = parseInt($(this).attr("stroke"));
-    if (stroke == 3) {
-        updateStroke(5);
-    }else if(stroke == 5){
-        updateStroke(7);
-    }else if(stroke == 7){
-        updateStroke(3);
-    }
-});
-
-/*
- * update stroke
- */
- function updateStroke(stroke){
-    modules.stroke(stroke);
-    $("#signature-stroke").attr("stroke", stroke);
- }
-
-/*
- * change signature font
- */
-$(".save-signature").click(function() {
-    signatureType = $("#updateSignature .head-links").find("li.active").attr("type");
-    if (signatureType === "capture") {
-        saveTextSignature();
-    }else if(signatureType === "upload"){
-        saveUploadSignature();
-    }else if(signatureType === "draw"){
-        saveSignature($('#create-signature').getCanvasImage('png'));
-    }
-});
-
-$(document).on('click','.btnsave',function (e){
-	domtoimage.toPng(document.getElementById('text-signature'), { quality: 0.95 })
-    .then(function (dataUrl) {
-        var link = document.createElement('a');
-        link.download = 'my-image-name.png';
-        link.href = dataUrl;
-		link.click();
-		console.log(dataUrl)
-		anchor = $("#signatureText");
-            anchor.val(dataUrl);
-		$("#signform").submit();
-    });
-});
-</script>
-
-@endsection
-
+    @endsection
