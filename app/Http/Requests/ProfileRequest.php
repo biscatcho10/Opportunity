@@ -41,7 +41,8 @@ class ProfileRequest extends FormRequest
             // 'tax_add' => 'required|boolean',
             // 'send_mail' => 'required|boolean',
             'image' => 'nullable|image',
-            'zip'
+            'zip'=>'required|numeric',
+            
         ];
     }
 }

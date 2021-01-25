@@ -48,6 +48,11 @@ class ProfileController extends Controller
         $profile = $user->profile;
 
         $profile->update($data);
+        
+        $users= User::findOrFail(auth()->user()->id);
+        $users->update([
+            'status'=>'2',
+        ]);
 
         return redirect()->route('signature.index')->with(['success' => 'Your Profile Updated Successfully']);
 

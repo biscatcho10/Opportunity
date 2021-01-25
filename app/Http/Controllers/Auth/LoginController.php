@@ -80,9 +80,18 @@ class LoginController extends Controller
                 // return back()->with('error', __('You need to verify your account. We have sent you a SMS, please check your Messages.'));
                 $encrypted = Crypt::encrypt('userId_' . $user->id);
                 return redirect()->route('verifyUser', ['token' => $encrypted])->with('success', __("Verification code has been sent to your phone number"));
-            } else{
-                return redirect()->to(route('portal.pending.home'));
+            }elseif($user->status==0){
+                return redirect()->route('profile.show');
+
+            }elseif($user->status==2){
+                return redirect()->route('signature.index');
+
+            }elseif($user->status==3){
+                return redirect()->route('get.pdf');
             }
+            else{
+                return redirect()->to(route('portal.pending.home'));
+            } 
 
         }
 

@@ -104,7 +104,7 @@
                                             <div class="col-md-6">
                                                 <label>Type your signature</label>
                                                 <input type="text" class="form-control signature-input" name=""
-                                                    placeholder="Type your signature" maxlength="18" value="Your Name">
+                                                    placeholder="Type your signature" maxlength="18" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label>Select font</label>

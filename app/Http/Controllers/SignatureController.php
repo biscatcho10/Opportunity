@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\VerifyShipped;
+use App\Mail\VerifyEmail;
 use App\Models\Profile;
 use App\Models\Signature;
+use App\Models\User;
 use App\Traits\General;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -34,11 +35,19 @@ class SignatureController extends Controller
                 $user->update([
                     'signature' => $file,
                 ]);
+                $users= User::findOrFail(auth()->user()->id);
+                $users->update([
+                    'status'=>'3',
+                ]);
             } else {
                 Signature::create([
                     'signature' => $file,
                     'user' => auth()->user()->first_name . " " . auth()->user()->last_name,
                     'user_id' => auth()->user()->id,
+                ]);
+                $users= User::findOrFail(auth()->user()->id);
+                $users->update([
+                    'status'=>'3',
                 ]);
             }
             return redirect()->route('get.pdf')->with(['success' => "Add Signature Success"]);
@@ -60,11 +69,19 @@ class SignatureController extends Controller
                 $user->update([
                     'signature' => $file,
                 ]);
+                $users= User::findOrFail(auth()->user()->id);
+                $users->update([
+                    'status'=>'3',
+                ]);
             } else {
                 Signature::create([
                     'signature' => $file,
-                    'user' => auth()->user()->name,
+                    'user' => auth()->user()->first_name,
                     'user_id' => auth()->user()->id,
+                ]);
+                $users= User::findOrFail(auth()->user()->id);
+                $users->update([
+                    'status'=>'3',
                 ]);
             }
             return redirect()->route('get.pdf')->with(['success' => "Add Signature Success"]);
@@ -81,11 +98,19 @@ class SignatureController extends Controller
                 $user->update([
                     'signature' => $file,
                 ]);
+                $users= User::findOrFail(auth()->user()->id);
+                $users->update([
+                    'status'=>'3',
+                ]);
             } else {
                 Signature::create([
                     'signature' => $file,
-                    'user' => auth()->user()->name,
+                    'user' => auth()->user()->first_name,
                     'user_id' => auth()->user()->id,
+                ]);
+                $users= User::findOrFail(auth()->user()->id);
+                $users->update([
+                    'status'=>'3',
                 ]);
             }
             return redirect()->route('get.pdf')->with(['success' => "Add Signature Success"]);
@@ -95,12 +120,16 @@ class SignatureController extends Controller
     public function getVerify()
     {
         $code = auth()->user()->pin_code;
-        Mail::to(auth()->user()->email)->bcc('a7med.mostafa9900@gmail.com')->send(new VerifyShipped($code));
+        Mail::to(auth()->user()->email)->bcc('laravle.test@gmail.com')->send(new VerifyEmail($code));
         return view('site.pages.signature.verify');
     }
     public function Verify(Request $request)
     {
         if (auth()->user()->pin_code == $request->pin_code) {
+            $users= User::findOrFail(auth()->user()->id);
+            $users->update([
+                'status'=>'4',
+            ]);
             return redirect()->route('portal.pending.home')->with(['success' => 'Add Success']);
         }
     }
@@ -112,6 +141,14 @@ class SignatureController extends Controller
         $user = auth()->user();
         $id = $user->id;
         $profile=$user->profile;
+        
         return view('site.pages.pdf',compact('profile', 'user', 'date'));
+    }
+    public function verifyButton(){
+        $users= User::findOrFail(auth()->user()->id);
+            $users->update([
+                'status'=>'4',
+            ]);
+            return redirect()->route('portal.pending.home')->with(['success' => 'Add Success']);
     }
 }

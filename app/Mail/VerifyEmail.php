@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class VerifyShipped extends Mailable
+class VerifyEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,6 +29,6 @@ class VerifyShipped extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.shipped',['code'=>$this->code]);
+        return $this->markdown('emails.verify',['code'=>$this->code]);
     }
 }

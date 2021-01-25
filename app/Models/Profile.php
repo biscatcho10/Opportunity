@@ -23,6 +23,7 @@ class Profile extends Model
         'image',
         'user_id',
         'zip'
+        
     ];
 
 
