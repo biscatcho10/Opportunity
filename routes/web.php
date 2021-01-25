@@ -61,6 +61,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('verifyAgain','SignatureController@getVerify')->name('get.verify');
     Route::post('verify','SignatureController@Verify')->name('verify.code');
     Route::get('getPDF','SignatureController@getPDF')->name('get.pdf');
+    Route::get("Verify",'SignatureController@verifyButton')->name('verify.button');
 
 
 });
